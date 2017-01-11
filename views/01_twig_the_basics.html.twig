@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+Hello Twig Viewers!
+
+{# Rendering a Variable #}
+<h1>{{ pageTitle }}</h1>
+
+{#Looping over Variables#}
+<div class="row">
+    {% for product in products %}
+        <div class="span4">
+            <h2>{{ product }}</h2>
+        </div>
+    {% endfor %}
+</div>
+
+{# The Comment Syntax: #}
+{# ... #}
+
+{# Whitespace inside Twig #}
+{%for product    in      products%}
+    <div class="span4">
+        <h2>{{product}}</h2>
+    </div>
+{% endfor %}
+
+</body>
+</html>

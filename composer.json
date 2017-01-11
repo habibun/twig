@@ -1,0 +1,13 @@
+{
+    "name": "jony/test",
+    "description": "this is a test twig project using raw php",
+    "require": {
+        "twig/twig": "^2.0"
+    },
+    "authors": [
+        {
+            "name": "Habibun Noby",
+            "email": "habibun.noby@gmail.com"
+        }
+    ]
+}
