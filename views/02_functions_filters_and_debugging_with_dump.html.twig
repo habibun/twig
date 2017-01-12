@@ -1,0 +1,66 @@
+{# Using a Function #}
+{# function inside “say something” syntax: #}
+<div class="price">
+    {{ random() }}
+</div>
+
+{# function inside a “do something” tag #}
+<div class="price">
+    {{ random() }}
+
+    {# random(10) returns a number from 0 to 10 #}
+    {% if random(10) < 5 %}
+        Really cheap!
+    {% endif %}
+</div>
+
+
+{# Using Filters #}
+{# We can use the upper filter to uppercase each product by placing a pipe (|) to the right of the variable and using the filter: #}
+<div class="row">
+    {% for product in products %}
+        <div class="span4">
+            <h2>{{ product|upper }}</h2>
+        </div>
+    {% endfor %}
+</div>
+
+{# you can use as many filters as you want #}
+<div class="row">
+    {% for product in products %}
+        <div class="span4">
+            <h2>{{ product|upper|reverse }}</h2>
+        </div>
+    {% endfor %}
+</div>
+
+{# Using Functions, Filters and Math #}
+{#  Instead of printing out the random number, let’s divide it by 100 to get a decimal, then use the number_format to show only one decimal place: #}
+{{ (random() / 100)|number_format(1) }}
+
+{# Getting the Length of a Collection #}
+{# In fact, functions and filters can be used anywhere. Let’s use the length filter to print a message if there are no penguin products for sale: #}
+{% if products|length == 0 %}
+    <div class="alert alert-error span12">
+        It looks like we're out of really awesome-looking penguin clothes :/.
+    </div>
+{% endif %}
+
+{# Filters and Arguments using “date” #}
+<div class="sale-ends-at">
+    {{ 'tomorrow noon'|date('D M jS ga') }}
+</div>
+
+{# Let’s pass in a saleEndsAt variable into the template and render it the same way: #}
+<div class="sale-ends-at">
+    {{ saleEndsAt|date('D M jS ga') }}
+</div>
+
+{# We can even use the date filter to print out the current year #}
+{{ 'now'|date('Y') }}
+
+{# The dump Function for Debugging #}
+{#{{ dump(products) }}#}
+
+{# Even better, use the dump function with no arguments to see all the variables that you have access to: #}
+{#{{ dump() }}#}
