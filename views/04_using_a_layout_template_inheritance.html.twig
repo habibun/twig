@@ -1,0 +1,30 @@
+{# Using a Layout: Template Inheritance #}
+{# Template Inheritance #}
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+    <div class="hero-unit">
+        this is a normal page
+    </div>
+
+    <div class="row">
+        this is a normal page 2
+    </div>
+{% endblock %}
+
+{# Teamwork: extends and block #}
+{# Using Multiple Blocks #}
+{# If we refresh, the title is blank. But now, we can add a title block to our homepage: #}
+{% block title %}50% off of Bow Ties{% endblock %}
+
+{# If you want to add to the content of the parent block instead of completely replacing it, use the parent function: #}
+{% block title %}
+    Contact us | {{ parent() }}
+{% endblock %}
+
+{# Common Mistake: Content outside of a Block #}
+
+{# Let’s try to write something outside of a block  #}
+{# ------ Where should this text be placed in the layout? #}
+
+

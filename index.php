@@ -31,4 +31,9 @@ $twig = new Twig_Environment($loader, array(
 /**
  * 3. Using Objects and Array Keys
  */
-require_once './controller/03_using_objects_and_array_keys.php';
+//require_once './controller/03_using_objects_and_array_keys.php';
+
+/**
+ * 4. Using a Layout: Template Inheritance
+ */
+require_once './controller/04_using_a_layout_template_inheritance.php';
