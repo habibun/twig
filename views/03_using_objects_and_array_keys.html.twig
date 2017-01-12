@@ -1,0 +1,45 @@
+{# Using data from an Array #}
+{# you could use the handy dump function to see that it’s an array with a title, summary and hasSale keys: #}
+{#{{ dump(pageData) }}#}
+
+{# To print the title, just say pageData.title. To print the summary, use the same trick! #}
+<div class="hero-unit">
+    <h1>{{ pageData.title }}</h1>
+    <p>
+        {{ pageData.summary }}
+    </p>
+</div>
+
+{# This can be used anywhere, like in an if statement in exactly the same way: #}
+{% if pageData.hasSale %}
+    <div>We're having a sale!</div>
+{% endif %}
+
+{# The much-rarer [] Syntax #}
+{# if we did need to manually get the first item, or “zero” key from the array #}
+{{ products.0 }}
+
+{# You may sometimes see another syntax for getting items from an array: #}
+{{ products[0] }}
+
+{# The square bracket syntax is only needed in some uncommon cases when you need to use a variable as the key: #}
+{{ products[random(5)] }}
+
+{# Getting Data from an Object #}
+{# But first, use our friend the dump function to see that products is just a collection of strings right now: #}
+{#{{ dump(products) }}#}
+
+
+{#  Even though pageData is an array and each product is an object, getting data off each is exactly the same: #}
+{% for product in products %}
+    <div class="span4">
+        <h2>{{ product.name }}</h2>
+        <div class="product-img">
+            <img src="assets/images/{{ product.imagePath }}" class="img-rounded" />
+        </div>
+    </div>
+{% endfor %}
+
+{# Twig checks to see if the Product class has a public name property. If the property doesn’t exist or isn’t public, it looks for a getName method and calls it to get the value. This lets us say product.name without really caring how the PHP code for the class looks. #}
+{# You can also call a method on an object if you need to: #}
+{{ product.getName() }}

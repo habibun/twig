@@ -26,4 +26,9 @@ $twig = new Twig_Environment($loader, array(
 /**
  * 2. Functions, Filters and Debugging with dump
  */
-require_once './controller/02_functions_filters_and_debugging_with_dump.php';
+//require_once './controller/02_functions_filters_and_debugging_with_dump.php';
+
+/**
+ * 3. Using Objects and Array Keys
+ */
+require_once './controller/03_using_objects_and_array_keys.php';
