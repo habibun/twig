@@ -36,4 +36,9 @@ $twig = new Twig_Environment($loader, array(
 /**
  * 4. Using a Layout: Template Inheritance
  */
-require_once './controller/04_using_a_layout_template_inheritance.php';
+//require_once './controller/04_using_a_layout_template_inheritance.php';
+
+/**
+ * 5. Including other Templates
+ */
+require_once './controller/05_including_other_templates.php';
