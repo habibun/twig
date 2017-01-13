@@ -1,3 +1,25 @@
+{# Let’s also see another new Twig tag called set, which sets a new variable. #}
+
+{% if backgroundColor is defined %}
+    {% set backgroundColor = backgroundColor %}
+{% else %}
+    {% set backgroundColor = 'lightblue' %}
+{% endif %}
+
+
+{# we can use an if statement and a special defined test. #}
+{% if backgroundColor is defined %}
+    <div class="well" style="background-color: {{ backgroundColor }};">
+        <h3>Save some Krill!</h3>
+
+        <p>Sale in summer suits all this weekend! {{ pageData.title }}</p>
+    </div>
+{% endif %}
+
+{# Negating a Test #}
+{% if backgroundColor is not defined %}
+    {% set backgroundColor = 'lightblue' %}
+{% endif %}
 <div class="well" style="background-color: {{ backgroundColor }};">
     <h3>Save some Krill!</h3>
 

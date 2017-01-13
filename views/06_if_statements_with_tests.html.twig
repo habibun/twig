@@ -1,0 +1,20 @@
+{% if products|length == 0 %}
+    <div class="alert alert-error span12">
+        It looks like we're out of really awesome-looking penguin clothes :/.
+    </div>
+{% endif %}
+
+{#  instead of using the length filter and seeing if the number of items in the products collection is zero, we could say if products is empty: #}
+{% if products is empty %}
+    <div class="alert alert-error span12">
+        It looks like we're out of really awesome-looking penguin clothes :/.
+    </div>
+{% endif %}
+
+{# If for some reason we wanted to know if the total number of products were even, we could use the length filter to get the number, then check that the number is “even” by using the even test: #}
+{% if products|length is even %}
+    <p>
+        There are an even number of products
+    </p>
+{% endif %}
+

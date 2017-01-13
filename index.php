@@ -41,4 +41,9 @@ $twig = new Twig_Environment($loader, array(
 /**
  * 5. Including other Templates
  */
-require_once './controller/05_including_other_templates.php';
+//require_once './controller/05_including_other_templates.php';
+
+/**
+ * 6. If Statements with “Tests”
+ */
+require_once './controller/06_if_statements_with_tests.php';
