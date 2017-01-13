@@ -1,0 +1,64 @@
+{# Making Mistakes! #}
+{#{% if {{ pageTitle }} == 'Hello' %} {% endif %}#}
+
+
+{# Macros #}
+{#{% macro printProducts(products, emptyMessage) %}
+    {% for product in products %}
+        <div class="span4">
+            <h2>{{ product.name }}</h2>
+
+            <div class="product-img">
+                <img src="../assets/images/{{ product.imagePath }}" alt="{{ product.name }}"/>
+            </div>
+        </div>
+
+        #}{#{% if loop.index is divisibleby(3) and not loop.last %}
+            <div class="row"></div>
+        {% endif %}#}{#
+
+        {% else %}
+            <div class="alert alert-error span12">
+                {{ emptyMessage }}
+            </div>
+    {% endfor %}
+{% endmacro %}#}
+
+{#{% import _self as myForms %}#}
+{# To use this, we call it just like any Twig function, except prefixed with _self. #}
+{#<div class="row">
+    {{ myForms.printProducts(
+    products,
+    "Oh now! We're all out of super-awesome penguin clothes!")
+    }}
+</div>#}
+
+{# the first three products are printed perfectly! Now printing out the featured products is very easy: #}
+{#<div class="row">
+    {{ myForms.printProducts(
+    featuredProducts,
+    "Snow storm in the arctic: nothing on sale today :/")
+    }}
+</div>#}
+
+{# macros can also live in totally different files #}
+{# templates/macros.twig #}
+
+{# This tells Twig to “import” the macros from that file and make them available as myMacros #}
+{% import '_macros.html.twig' as myMacros %}
+
+
+{# To use it, just change _self to myMacros #}
+<div class="row">
+    {{ myMacros.printProducts(
+    featuredProducts,
+    "Snow storm in the arctic: nothing on sale today :/")
+    }}
+</div>
+
+<div class="row">
+    {{ myMacros.printProducts(
+    products,
+    "Oh now! We're all out of super-awesome penguin clothes!")
+    }}
+</div>

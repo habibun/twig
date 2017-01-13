@@ -3,7 +3,6 @@
     "type": "project",
     "description": "Twig Template Engine in Raw PHP",
     "homepage": "https://github.com/habibun/twig",
-    "license": "MIT",
     "require": {
         "twig/twig": "^2.0"
     },

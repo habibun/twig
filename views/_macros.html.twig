@@ -1,0 +1,20 @@
+{% macro printProducts(products, emptyMessage) %}
+    {% for product in products %}
+        <div class="span4">
+            <h2>{{ product.name }}</h2>
+
+            <div class="product-img">
+                <img src="../assets/images/{{ product.imagePath }}" alt="{{ product.name }}"/>
+            </div>
+        </div>
+
+        {#{% if loop.index is divisibleby(3) and not loop.last %}
+            <div class="row"></div>
+        {% endif %}#}
+
+    {% else %}
+        <div class="alert alert-error span12">
+            {{ emptyMessage }}
+        </div>
+    {% endfor %}
+{% endmacro %}

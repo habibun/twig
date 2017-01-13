@@ -51,4 +51,9 @@ $twig = new Twig_Environment($loader, array(
 /**
  * 7. The for “loop” and inline “if” Syntax
  */
-require_once './controller/07_the_for_loop_and_inline_if_syntax.php';
+//require_once './controller/07_the_for_loop_and_inline_if_syntax.php';
+
+/**
+ * 8. Mistakes and Macros
+ */
+require_once './controller/08_mistakes_and_macros.php';
