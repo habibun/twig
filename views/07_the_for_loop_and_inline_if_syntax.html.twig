@@ -1,0 +1,45 @@
+{# The for “loop” and inline “if” Syntax #}
+{# we can use a divisibleby test to see if the item number we’re on is divisible by three. #}
+<div class="row">
+    {% for product in products %}
+        <div class="span4"></div>
+
+        {% if loopNumber is divisibleby(3) %}
+            <div class="row"></div>
+        {% endif %}
+    {% endfor %}
+</div>
+
+{# The Magical loop Variable #}
+{% for product in products %}
+    {# ... #}
+
+    {% if loop.index is divisibleby(3) %}
+        <div class="row"></div>
+    {% endif %}
+{% endfor %}
+
+
+{# to avoid an extra row being added if we have exactly 3, 6 or 9 objects, let’s not print a new row if we’re on the last item: #}
+{% for product in products %}
+    {# ... #}
+
+    {% if loop.index is divisibleby(3) and not loop.last %}
+        <div class="row"></div>
+    {% endif %}
+{% endfor %}
+
+{# Instead of seeing if products is empty, we can add an else tag inside of the for loop. #}
+{% for product in products %}
+    {# ... #}
+{% else %}
+    <div class="alert alert-error span12">
+        It looks like we're out of really awesome-looking penguin clothes :/.
+    </div>
+{% endfor %}
+
+{# The inline if Syntax #}
+<div class="well" style="background-color: {{ backgroundColor is defined ? backgroundColor : 'lightBlue' }};">
+    {# ... #}
+</div>
+

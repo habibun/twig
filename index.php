@@ -46,4 +46,9 @@ $twig = new Twig_Environment($loader, array(
 /**
  * 6. If Statements with “Tests”
  */
-require_once './controller/06_if_statements_with_tests.php';
+//require_once './controller/06_if_statements_with_tests.php';
+
+/**
+ * 7. The for “loop” and inline “if” Syntax
+ */
+require_once './controller/07_the_for_loop_and_inline_if_syntax.php';
