@@ -1,0 +1,57 @@
+{# Expert Control of Blocks with the block Function #}
+<title>
+    {% block title %}
+        Penguins Pants Plus! Your source for fancy penguin suits
+    {% endblock %} | Penguins Pants Plus!
+</title>
+
+{#  which you can use to return the content of a block at any time #}
+{#{{ block('title') }} | Penguins Pants Plus!#}
+
+{# The only thing we’re missing is the default page title if the title block isn’t set. #}
+{#{% if block('title') %}
+    {{ block('title') }} | Penguins Pants Plus!
+{% else %}
+    Penguins Pants Plus! Your source for fancy penguin suits
+{% endif %}#}
+
+{# The Short block Syntax #}
+{#{% block title 'Start looking fly!' %}#}
+
+{# Concatenating Strings #}
+{#{% block title 'Start looking fly! '~pageData.title %}#}
+
+{# Whitespace Control #}
+{# On any twig starting or ending tag, you can add a minus sign (-): #}
+{#<title>#}
+    {#{%- if block('title') %}#}
+        {#{{ block('title') }} | Penguins Pants Plus!#}
+    {#{% else %}#}
+        {#Penguins Pants Plus! Your source for fancy penguin suits#}
+    {#{% endif %}#}
+{#</title>#}
+
+{#  If we add enough of these, we’ll see all the extra space disappear: #}
+{#
+<title>
+    {%- if block('title') -%}
+        {{- block('title') -}} | Penguins Pants Plus!
+    {%- else -%}
+        Penguins Pants Plus! Your source for fancy penguin suits
+    {%- endif -%}
+</title>#}
+
+{# The spaceless Tag #}
+{#{% spaceless %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+{% endspaceless %}#}
+
+{# Using Undefined Variables with the default Filter #}
+{#<div class="well" style="background-color: {{ backgroundColor|default('lightblue') }};"></div>#}
+
+{# Escaping #}
+<p>
+    {{ pageData.summary|raw }}
+</p>

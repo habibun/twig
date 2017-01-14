@@ -56,4 +56,9 @@ $twig = new Twig_Environment($loader, array(
 /**
  * 8. Mistakes and Macros
  */
-require_once './controller/08_mistakes_and_macros.php';
+//require_once './controller/08_mistakes_and_macros.php';
+
+/**
+ * 9. Extra Credit Tricks and HTML Escaping
+ */
+require_once './controller/09_extra_credit_tricks_and_html_escaping.php';
